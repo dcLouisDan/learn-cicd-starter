@@ -1,13 +1,12 @@
 package auth
 
-
 import (
-  "net/http"
-  "testing"
+	"net/http"
+	"testing"
 )
 
 func TestGetApiKey(t *testing.T) {
-  headers := http.Header{}
+	headers := http.Header{}
 	headers.Set("Authorization", "ApiKey my-secret-key")
 
 	key, err := GetAPIKey(headers)
@@ -20,5 +19,3 @@ func TestGetApiKey(t *testing.T) {
 		t.Fatalf("expected 'my-secret-key', got %q", key)
 	}
 }
-
-
